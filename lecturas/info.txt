@@ -1,0 +1,3 @@
+lectura1.pcap
+
+Captura realizada en oficina mediante conexión ethernet el día 8 de abril de 12.15PM a 12.32PM.
