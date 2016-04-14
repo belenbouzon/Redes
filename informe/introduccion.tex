@@ -1,0 +1,45 @@
+\section{Introducción}
+
+
+
+\subsection{Objetivo}
+
+El objetivo propuesto por la cátedra fue el de utilizar técnicas provistas por la teoría de la información para distinguir
+diversos aspectos de una variedad de redes de manera analítica. 
+Para ello, nos fue solicitada la implementación de un conjunto de herramientas que nos posibilitaran capturar, manipular y analizar paquetes de información haciendo hincapié en la observación de los símbolos distinguidos que pudiésemos notar en cada una de las fuentes propuestas y en la entropía de cada una de ellas.
+
+\subsection{Marco teórico}
+
+Dada la consigna propuesta por la cátedra, existen dos conceptos centrales que resulta pertinente comprender antes de continuar con la lectura del presente informe. Estos son, el de Entropía y el de protocolos ARP.
+
+En Teoría de la información se conoce a la entropía como el promedio de información contenida en cada mensaje enviado por una fuente. 
+Como la cantidad de información está determinada en función de la probabilidad de aparición de cada símbolo posible (siendo menor la información aportada cuando el símbolo en cuestión no es distinguido) se desprende lógicamente que la entropía será inversamente proporcional a la "predictibilidad´´  de la fuente. Es decir, que cuanto más predecible sea la fuente, menor será su entropía (y viceversa).
+Dicho de otra manera, cuanto menos probable sea un evento, mayor información proporcionará su aparición.
+ La fórmula para calcular la entropía de una fuente con \textit{n} eventos probables es:
+
+ $$H(S) = \sum \limits_{i=1}^n p_i * (- \log{p_i})$$
+ \newline
+
+Por otro lado, las siglas ARP hacen referencia a \textit{Address Resolution Protocol}. Como su nombre lo indica, se trata de un protocolo de la capa \textit{data link} responsable de resolver la dirección de hardware (MAC) que corresponde a una determinada dirección IP, conocida por el emisor.
+
+Para que esto sea posible, es necesario que se puedan identificar dos tipos de paquetes ARP: 
+
+\begin{itemize}
+    \item Los paquetes \textit{who-is}, que son distribuidos a todos los equipos de la red mediante broadcast con el fin de poder solicitar su MAC al nodo que posea la IP indicada en el paquete.
+    \item Los paquetes \textit{is-at} transmiten mediante unicast la dirección MAC solicitada - entre otras cosas - al equipo que inició la comunicación solicitándola.
+\end{itemize}
+
+Todos los paquetes ARP contienen diversos campos que especifican:
+\begin{itemize}
+    \item Tipo de hardware
+    \item Tipo de protocolo
+    \item Longitud dirección de hardware
+    \item Longitud dirección de protocolo
+    \item Código de operación
+    \item Dirección hardware del emisor
+    \item Dirección IP del emisor
+    \item Dirección hardware del receptor
+    \item Dirección IP del receptor
+\end{itemize}
+
+En este trabajo de investigación nos enfocaremos principalmente en los últimos cinco.
