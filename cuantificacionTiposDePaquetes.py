@@ -1,11 +1,11 @@
 import sys
 import scapy.all
-
+from utils import *
 
 if len(sys.argv)<1:
 	sys.exit("Contabilizando tipos de paquetes \n")
 
-packages = scapy.utils.rdpcap(sys.argv[1], int(sys.argv[2]))
+packages = scapy.utils.rdpcap(sys.argv[1], 100)
 
 cants = dict()
 for packet in packages:
@@ -15,4 +15,4 @@ for packet in packages:
 		cants[packet.type] = 1
 
 for key in cants.keys():
-	print "Type: " +  str(key) + " - Amount: " + str(cants[key]) + "\n"
+	print str( hex_to_packet( hex(key) ) ) + " - Amount: " + str(cants[key]) + "\n"
