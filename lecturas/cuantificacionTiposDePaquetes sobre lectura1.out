@@ -1,0 +1,21 @@
+QUANT	| TYPE
+91962	| Internet Protocol version 4 (IPv4)
+6		| Ethernet flow control
+143		| Unknown packet
+363		| Address Resolution Protocol (ARP)
+
+####
+
+Internet Protocol version 4 (IPv4) - Info del evento: 0.0055845167067
+
+
+Ethernet flow control - Info del evento: 9.64295577471
+
+
+Unknown packet - Info del evento: 6.47187061367
+
+
+Address Resolution Protocol (ARP) - Info del evento: 5.54031240967
+
+
+ENTROPY: 0.037934102128

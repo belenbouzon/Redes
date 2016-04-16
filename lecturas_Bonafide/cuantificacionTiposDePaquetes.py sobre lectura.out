@@ -1,0 +1,21 @@
+QUANT	| TYPE
+8658	| Internet Protocol version 4 (IPv4)
+2303	| Unknown packet
+207	| Unknown packet
+1038	| Address Resolution Protocol (ARP)
+
+####
+
+Internet Protocol version 4 (IPv4) - Info del evento: 0.641720140253
+
+
+Unknown packet - Info del evento: 1.96599126843
+
+
+Unknown packet - Info del evento: 4.37524037499
+
+
+Address Resolution Protocol (ARP) - Info del evento: 2.76290810453
+
+
+ENTROPY: 0.842489313937
