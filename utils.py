@@ -44,4 +44,7 @@ def hex_to_packet(hex):
 		'0x9000': 'Ethernet Configuration Testing Protocol[10]'
 	}
 
-	return packet_type[hex]
+	if hex in packet_type:
+		return packet_type[hex]
+	else:
+		return "Unknown packet"
