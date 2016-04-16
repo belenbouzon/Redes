@@ -1,5 +1,6 @@
 def hex_to_packet(hex):
 	packet_type = {
+		'0': 'Unknown type',
 		'0x800': 'Internet Protocol version 4 (IPv4)',
 		'0x806': 'Address Resolution Protocol (ARP)',
 		'0x842': 'Wake-on-LAN[7]',
