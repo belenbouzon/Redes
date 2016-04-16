@@ -47,9 +47,10 @@ if tercerParametro!=0 and tercerParametro!=10:
 		for keydst in cants[keysrc].keys():
 			#print str(keysrc)
 			frecuency = float((cants[keysrc][keydst]))/float(total)
-			info = -1 * math.log(frecuency)
-			print str(keysrc) + "\t| " + str(keydst) + "\t| " + " - Info del evento: " + str(info)
-			entropy += info*frecuency
+			if frecuency != 0:
+				info = -1 * math.log(frecuency)
+				print str(keysrc) + "\t| " + str(keydst) + "\t| " + " - Info del evento: " + str(info)
+				entropy += info*frecuency
 	print "ENTROPY: " + str(entropy)
 
 if tercerParametro==10:
@@ -60,12 +61,13 @@ if tercerParametro==10:
 	for keysrc in cants.keys():
 		for keydst in cants[keysrc].keys():
 			frecuency = float((cants[keysrc][keydst]-cantsReply[keysrc][keydst]))/float(total)
-			info = -1 * math.log(frecuency)
-			print "Request " + str(keysrc) + "\t| " + str(keydst) + "\t| " + " - Info del evento: " + str(info)
-			entropy += info*frecuency
-			if cantsReply[keysrc][keydst]!=0:
-				frecuency = float((cantsReply[keysrc][keydst]))/float(total)
+			if frecuency != 0:
 				info = -1 * math.log(frecuency)
 				print "Request " + str(keysrc) + "\t| " + str(keydst) + "\t| " + " - Info del evento: " + str(info)
 				entropy += info*frecuency
+				if cantsReply[keysrc][keydst]!=0:
+					frecuency = float((cantsReply[keysrc][keydst]))/float(total)
+					info = -1 * math.log(frecuency)
+					print "Request " + str(keysrc) + "\t| " + str(keydst) + "\t| " + " - Info del evento: " + str(info)
+					entropy += info*frecuency
 	print "ENTROPY: " + str(entropy)
