@@ -6,11 +6,11 @@ import colorsys
 #Recibo <numero de nodo, su numero de color>
 #iteracionesColores = open("iteraciones.txt",'r')
 #nodes = eval(iteracionesColores.readline())
-nodes = eval("[(192.168.0.1, 1), (192.168.0.18, 1)]")
+nodes = eval("[(1, 1), (2, 1), (3, 1), (4, 1), (5, 1), (6, 1), (7, 1), (8, 1)]")
 #cantColores = 2
 
 #Recibo las aristas
-aristas = [(1.3,1.2),(1.2,1.3)]
+aristas = [(1,7), (1,3), (1,2), (1,9), (2,3), (8,10), (8,5), (4,1), (4,2), (4,11), (4,5), (4,7), (4,3), (4,12), (4,13), (5,4), (6,6), (6,14), (6,4), (7,4), (3,1), (3,4), (3,2)]
 
 cantidadDeNodos = len(nodes)
 
@@ -29,10 +29,10 @@ nodeColors = []
 G=nx.Graph()
 G.add_nodes_from([x[0] for x in nodes])
 G.add_edges_from(aristas)
-pos=nx.circular_layout(G)
+pos=nx.spring_layout(G)
 plt.figure(figsize=(8,8))
 #nx.draw_graphviz(G,prog='neato',node_color = nodeColors, node_size=700, with_labels = True)
-nx.draw(G,pos,node_size=700, with_labels= True, alpha=0.7, node_shape="h", linewidths=0.5, width= 0.5,style= 'solid', font_size =10)
+nx.draw(G,pos,node_size=1000, with_labels= True, alpha=0.7, node_shape="h", linewidths=0.5, width= 0.5,style= 'solid', font_size =12, node_color='b')
 plt.axis('equal')
 plt.savefig(str(cantidadDeNodos) + "Nodos4.png", transparent = False)
 plt.close()
