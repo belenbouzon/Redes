@@ -1,6 +1,8 @@
 \section{Análisis}
 
-\subsection{Caso de estudio: Red laboral}
+En esta sección presentaremos el análisis de los distintos casos de estudio abordados. Cada subsección corresponderá a uno de ellos, abordándolos de menor a mayor tamaño.
+
+\subsection{Red doméstica}
 
 % \indent \indent En este caso estudiamos la red de una oficina con alrededor de 40 computadoras y teléfonos celulares.\\
 % \indent La captura duró alrededor de seis horas y se compone de más de noventa mil mensajes ARP who-has. Con este volumen de datos fue necesario seccionar el análisis bajo diferentes criterios a la hora de observar los grafos dirigidos que se crearon en base a los resultados, como la cantidad de mensajes o una cantidad mínima de mensajes entre nodos.\\
@@ -84,9 +86,19 @@
 
 
 \newpage
-\subsection{Caso de estudio: Otra red laboral}
+\subsection{Red Laboral}
 
-% \indent \indent  En este segundo caso de estudio, se estudió la red de las oficinas donde trabaja otro de los integrantes del grupo. La captura de datos se realizó por el lapso de dos horas, en modo promiscuo y en un host conectado por cable Ethernet a la red, en contraposición con el caso anterior.\\
+En este segundo caso, se analizó una red laboral de una PyME. La captura se realizó por un lapso de media hora en modo promiscuo.
+
+En el gráfico \ref{laboral:graph} se pueden ver los resultados de obtenidos.
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{img/laboralGraph.png}
+    \caption{Grafo de Red Laboral}
+    \label{laboral:graph}
+\end{figure}
+
 % \indent Dada la enorme cantidad de datos y, además, para analizar un poco la progresión de la captura, se consideraron tres casos.\\
 % \indent El primer caso corresponde a los primeros mil paquetes ARP who-has que se capturaron, y nos servirá como primera aproximación. Como caso intermedio, estudiamos luego los primeros seis mil paquetes ARP who-has, que se corresponden aproximadamente con la mitad de los paquetes de dicho tipo capturados a lo largo del experimento. Finalmente, se estudió el caso con todos los paquetes ARP who-has capturados.\\
 % \indent En los tres casos se calcularon las entropías de las fuentes \textit{Fuente} y \textit{Destino}, y además se confeccionarion gráficos de barras con la información calculada por IP para las IPs que menos información suministran, que de acuerdo a lo que expresado en la sección \textbf{Desarrollo} son los candidatos a  nodos distinguidos. En tales gŕaficos se puede observar también una recta que representa la entropía de la fuente y que servirá para contrastar visualmente la información de los símbolos con la entropía.\\
@@ -208,7 +220,7 @@
 
 % \newpage
 
-\subsection{Caso de estudio: Red de la facultad}
+\subsection{Red Bonafide}
 
 % \indent Finalmente, para tener un caso un poco distinto al de una red laboral, que puede ser algo pequeña, dependiendo de con que se la compare, tomamos muestra de la red de los laboratorios de la facultad (más específicamente, desde el laboratorio 4).\\
 % \indent Vamos a comenzar mencionando ciertas particularidades que notamos al mirar un poco los datos:
