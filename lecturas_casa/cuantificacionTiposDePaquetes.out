@@ -1,0 +1,87 @@
+
+
+QUANT	| TYPE
+13309	| Internet Protocol version 4 (IPv4)
+1	| Unknown packet
+2	| Unknown packet
+2	| Unknown packet
+1	| Unknown packet
+3334	| Address Resolution Protocol (ARP)
+3	| Unknown packet
+2	| Unknown packet
+3	| Unknown packet
+2	| Unknown packet
+2	| Unknown packet
+1	| Unknown packet
+97	| Unknown packet
+2	| Unknown packet
+1	| Unknown packet
+1	| Unknown packet
+2	| Unknown packet
+27379	| Unknown packet
+1388	| Unknown packet
+1	| Unknown packet
+
+####
+
+Internet Protocol version 4 (IPv4) - Info del evento: 1.79629496438
+
+
+Unknown packet - Info del evento: 11.2924907415
+
+
+Unknown packet - Info del evento: 10.5993435609
+
+
+Unknown packet - Info del evento: 10.5993435609
+
+
+Unknown packet - Info del evento: 11.2924907415
+
+
+Address Resolution Protocol (ARP) - Info del evento: 3.18056267816
+
+
+Unknown packet - Info del evento: 10.1938784528
+
+
+Unknown packet - Info del evento: 10.5993435609
+
+
+Unknown packet - Info del evento: 10.1938784528
+
+
+Unknown packet - Info del evento: 10.5993435609
+
+
+Unknown packet - Info del evento: 10.5993435609
+
+
+Unknown packet - Info del evento: 11.2924907415
+
+
+Unknown packet - Info del evento: 6.71777976296
+
+
+Unknown packet - Info del evento: 10.5993435609
+
+
+Unknown packet - Info del evento: 11.2924907415
+
+
+Unknown packet - Info del evento: 11.2924907415
+
+
+Unknown packet - Info del evento: 10.5993435609
+
+
+Unknown packet - Info del evento: 1.0749591663
+
+
+Unknown packet - Info del evento: 4.0568716004
+
+
+Unknown packet - Info del evento: 11.2924907415
+
+
+ENTROPY: 0.878891807316
