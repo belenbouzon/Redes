@@ -4,6 +4,43 @@ En esta sección presentaremos el análisis de los distintos casos de estudio ab
 
 \subsection{Red doméstica}
 
+\subsection{Nodos intervinientes}
+\textcolor{red}{HACER ESTE GRAFICO CON LA CASA DE MAXI!}
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{img/laboralGraph.png}
+    \caption{Grafo de Red Laboral}
+    \label{laboral:graph}
+\end{figure}
+
+\subsection{Frecuencia de los distintos tipos de paquetes}
+
+% En el gráfico \ref{domestica:paquetes} se pueden ver los resultados de obtenidos.
+
+% \begin{figure}[h!]
+%     \centering                                                       
+%     \includegraphics[width=300pt]{img/"Red Doméstica - Frecuencias en función de tipos de paquetes.png"}
+%     \caption{}
+%     \label{domestica:paquetes}
+% \end{figure}
+
+\subsection{Información de las fuentes emisoras y receptoras de paquetes ARP.}
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{img/"Red Doméstica - Información de las fuentes emisoras de paquetes ARP.png"}
+    \caption{}
+    \label{domestica:emisoras}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{img/"Red Doméstica - Información de las fuentes receptoras de paquetes ARP.png"}
+    \caption{}
+    \label{domestica:receptoras}
+\end{figure}
+
+
 % \indent \indent En este caso estudiamos la red de una oficina con alrededor de 40 computadoras y teléfonos celulares.\\
 % \indent La captura duró alrededor de seis horas y se compone de más de noventa mil mensajes ARP who-has. Con este volumen de datos fue necesario seccionar el análisis bajo diferentes criterios a la hora de observar los grafos dirigidos que se crearon en base a los resultados, como la cantidad de mensajes o una cantidad mínima de mensajes entre nodos.\\
 
@@ -90,6 +127,7 @@ En esta sección presentaremos el análisis de los distintos casos de estudio ab
 
 En este segundo caso, se analizó una red laboral de una PyME. La captura se realizó por un lapso de media hora en modo promiscuo.
 
+\subsection{Nodos intervinientes}
 En el gráfico \ref{laboral:graph} se pueden ver los resultados de obtenidos.
 
 \begin{figure}[h!]
@@ -97,6 +135,45 @@ En el gráfico \ref{laboral:graph} se pueden ver los resultados de obtenidos.
     \includegraphics[width=300pt]{img/laboralGraph.png}
     \caption{Grafo de Red Laboral}
     \label{laboral:graph}
+\end{figure}
+
+La visualización del grafo indicaría, a primera vista, que el nodo 4 se transmite paquetes con la mayoría de los demás vértices (excepto casos particulares) siendo el candidato ideal para ser el router de esta conexión - es decir, el nodo con salida exterior.\\
+
+El nodo 1 también se comunica con varios nodos a la vez - esto se debe a que es un servidor local en la oficina, al cual le llegan peticiones de nodos particulares - que a su vez también se comunican con los otros que acceden a dicho servidor local. Es decir, el nodo 2, 3, 7 y 9 acceden al servidor local 4, pero a su vez entre el 2 y el 3 se comunican entre ellos.\\
+
+Los nodos 10, 8 y 14 parecieran ser nodos particulares que no se conectan con el router. En particular, el nodo 8 es 0.0.0.0, por lo que en realidad es el nodo 5 y 10 comunicándose con ellos mismos . El nodo 14 es una IP interna así que posiblemente es un nodo comunicándose con una interfaz propia.\\
+
+Luego de ese análisis, consultamos las IPs con la configuración de la red (a la que tenemos acceso por ser la red de la oficina laboral). Efectivamente, el nodo 4 es el router, así como el nodo 1 el servidor local estimado, y los nodos 2, 3, 7 y 9 los que se comunican con dicho servidor.
+
+La incertidumbre del nodo 14 se resolvió como una Virtual Network Adapter, producto de una Virtual Box corriendo en el nodo 6.
+
+Todas las demás relaciones parecen ser naturales, de nodos que se comunican con el router para poder salir a internet.
+
+\subsection{Frecuencia de los distintos tipos de paquetes}
+
+En el gráfico \ref{laboral:paquetes} se pueden ver los resultados de obtenidos.
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{img/"Red Laboral - Frecuencia en función de tipos de paquetes.png"}
+    \caption{}
+    \label{laboral:paquetes}
+\end{figure}
+
+\subsection{Información de las fuentes emisoras y receptoras de paquetes ARP.}
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{img/"Red Laboral - Información de las fuentes emisoras de paquetes ARP.png"}
+    \caption{}
+    \label{laboral:emisoras}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{img/Red Laboral - Información de las fuentes receptoras de paquetes ARP.png}
+    \caption{}
+    \label{laboral:receptoras}
 \end{figure}
 
 % \indent Dada la enorme cantidad de datos y, además, para analizar un poco la progresión de la captura, se consideraron tres casos.\\
@@ -221,8 +298,58 @@ En el gráfico \ref{laboral:graph} se pueden ver los resultados de obtenidos.
 % \newpage
 
 \subsection{Red Bonafide}
+ Por último, dadas las peque\~nas dimensiones de las redes anteriores, decidimos tomar datos de la red pública ofrecida por el local Bonafide. La captura se realizó por un lapso de media hora en modo promiscuo.
 
-% \indent Finalmente, para tener un caso un poco distinto al de una red laboral, que puede ser algo pequeña, dependiendo de con que se la compare, tomamos muestra de la red de los laboratorios de la facultad (más específicamente, desde el laboratorio 4).\\
+\subsection{Nodos intervinientes}
+
+En el gráfico \ref{bonafide:graph} se pueden ver los resultados de obtenidos.
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{img/bonafideGraph.png}
+    \caption{Grafo de Red Bonafide}
+    \label{bonafide:graph}
+\end{figure}
+
+Resulta interesante observar la indiscutible predominancia de aristas incidentes al nodo 1, descripto con la dirección IP 192.168.1.1: el resto de los nodos son adyacentes a él o tienen un camino al mismo de - a lo sumo - tercer grado.\\
+Consideramos que estos datos son suficientes como para deducir que dicha dirección IP coincide con la del router.\\
+Al indagar acerca de la naturaleza de los únicos nodos que no se encuentran conectados de forma directa al nodo 1 (el 5 (192.168.1.110), el 16 (192.168.1.4), el 23(0.0.0.0) y el 20 (169.254.201.232)) llegamos a las siguientes conclusiones: \\
+\begin{itemize}
+	\item Tanto el nodo 5 como el 16 (ambos de clase C) se comunican con el router a través del nodo 11 (192.168.1.105). Ahondando en las características de estas transferencias, se puede ver que el nodo 11 realiza requests a los nodos 1, 5 y 16, pero sólo llega a él un request desde el nodo 16. Podríamos entonces inferir que el nodo 11 puede estar funcionando como switch \textcolor{red}{FRUTA FRUTA FRUTA PARA TODOS. AVERIGUAR ESTO Y CORREGIRLO.}
+	\item El nodo 20 se conecta al 23 y éste último al 7 (192.168.1.100). Esto forma la secuencia 169.254.201.232 (clase B)- 0.0.0.0 - 192.168.1.100 (clase C) - router. Si bien no se trata de un grafo dirigido, se puede ver en los resultados que la dirección 0.0.0.0 nunca recibe datos que podamos escuchar, si no que envía requests a ambos nodos que lo circundan.\\ De acuerdo a lo investigado, inferimos que se trata de un fenómeno que ocurre cuando un nuevo host se conecta a la IP, con el fin de verificar que no tenga una dirección que se encuentre en uso, evitando así las IP duplicadas.\\
+\end{itemize}
+
+
+\subsection{Frecuencia de los distintos tipos de paquetes}
+
+En el gráfico \ref{bonafide:paquetes} se pueden ver los resultados de obtenidos.
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{img/"Red Bonafide - Frecuencias en función de tipos de paquetes.png"}
+    \caption{}
+    \label{bonafide:paquetes}
+\end{figure}
+
+\subsection{Información de las fuentes emisoras y receptoras de paquetes ARP.}
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{img/"Red Bonafide - Información de las fuentes emisoras de paquetes ARP.png"}
+    \caption{}
+    \label{bonafide:emisoras}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=300pt]{img/"Red Bonafide - Información de las fuentes receptoras de paquetes ARP.png"}
+    \caption{}
+    \label{bonafide:receptoras}
+\end{figure}
+
+
+
+
 % \indent Vamos a comenzar mencionando ciertas particularidades que notamos al mirar un poco los datos:
 % \begin{itemize}
 % 	\item Por los números de las direcciones IP, se trata de una red clase A (dentro del rango 0.0.0.0 a 127.255.255.255).
