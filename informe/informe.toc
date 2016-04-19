@@ -1,0 +1,19 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\'on}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Objetivo}{2}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Marco te\'orico}{2}{subsection.1.2}
+\contentsline {section}{\numberline {2}Detalles de implementaci\'on}{3}{section.2}
+\contentsline {section}{\numberline {3}An\'alisis}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Red dom\'estica}{4}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}Nodos intervinientes}{4}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}Frecuencia de los distintos tipos de paquetes}{4}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}{4}{subsubsection.3.1.3}
+\contentsline {subsection}{\numberline {3.2}Red Laboral}{7}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Nodos intervinientes}{7}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Frecuencia de los distintos tipos de paquetes}{8}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}{8}{subsubsection.3.2.3}
+\contentsline {subsection}{\numberline {3.3}Red Bonafide}{10}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}Nodos intervinientes}{10}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Frecuencia de los distintos tipos de paquetes}{11}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}{11}{subsubsection.3.4.2}
+\contentsline {section}{\numberline {4}Conclusiones}{11}{section.4}
