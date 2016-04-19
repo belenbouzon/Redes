@@ -66,9 +66,13 @@ Viendo esto, podemos decir que el dispositivo con IP 192.168.0.1 es un nodo impo
 
 En el caso del dispositivo con IP 192.168.0.106, y 192.168.0.108 las solicitudes para buscar al nodo podr\'ian deberse a que estos estaban enviando informaci\'on al nodo.
 
-La mayor\'ia de los dispositivos conten\'ia una IP con el prefijo de 192.168.0, con lo cual se puede deducir que \'esta es la IP de la red analizada. Adem\'as, se han detectado paquetes provenientes de redes privadas distintas (puntualmente de dos dispositivos).
+La mayor\'ia de los dispositivos conten\'ia una IP con el prefijo de 192.168.0, con lo cual se puede deducir que \'esta es la IP de la red analizada. Adem\'as, se han detectado paquetes provenientes de redes privadas distintas (puntualmente de tres dispositivos).
 
 Se registr\'o un trafico m\'inimo entre dispositivos en donde el 192.168.0.1 no estuvo involucrado.
+
+En la red analizada exist\ian dos computadoras enlazadas por cable al router wifi y el resto estaban enlazados al mismo utilizando el wifi, incluso la computadora en la cual se ejecut\'o el algoritmo de captura de paquetes. Esto podr\ia explicar la presencia de dos redes en las mediciones, una de ellas (169.254) es la red formada por las dos computadoras enlazadas por cable y el proxy que se comunica con internet y la otra red (192.168.0) es la conformada por los dispositivos WiFi. Si esto es cierto el 169.254.93.30 podr\ia ser el proxy y el 192.168.0.1 el nodo que rutea a los dispositivos de la red de wifi a la red del proxy.\\
+El grafo muestra que el IP 0.0.0.0 (nodo 4) tuvo contacto con cinco nodos. Puntualmente El 0.0.0.0 envi\'o datos a cuatro nodos cuyos IP tuvieron actividad con otros nodos de la red, con lo cual se puede deducir esos mensajes provenian de los dispositivos reporesentados por esos cuatro nodos, que intentaban determinar si exist\ian duplicados de su IP en la red. \\
+El nodo 169.254.93.30 es el \unico env\ia paquetes al 0.0.0.0, lo cual puede tratarse de un mecanismo de IP para env\iar informaci\on a todas las redes.\\
 
 \newpage
 \subsection{Red Laboral}
