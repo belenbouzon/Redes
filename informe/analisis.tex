@@ -154,6 +154,8 @@ En el gr\'afico \ref{bonafidePaquetes} se pueden ver los resultados de obtenidos
     \label{bonafidePaquetes}
 \end{figure}
 
+En este caso se ve una amplia predominancia de los paquetes de tipo IPv4. Esto se corresponde con nuestras expectativas, puesto que los paquetes de tipo ARP se envían como forma de reconocimiento entre dispositivos. Una vez que estos reconocimientos fueron establecidos, el caudal de paquetes de transferencia IPv4 aumenta, superando así a los paquetes ARP en una red quya estructura no se modifica a cada momento debido a la conexión y desconexión de dispositivos.
+
 \subsubsection{Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}
 
 \begin{figure}[h!]
@@ -171,69 +173,6 @@ En el gr\'afico \ref{bonafidePaquetes} se pueden ver los resultados de obtenidos
 \end{figure}
 
 
-
-
-% \indent Vamos a comenzar mencionando ciertas particularidades que notamos al mirar un poco los datos:
-% \begin{itemize}
-% 	\item Por los n\'umeros de las direcciones IP, se trata de una red clase A (dentro del rango 0.0.0.0 a 127.255.255.255).
-% 	\item A diferencia de lo usual, los que suponemos, son routers, tienen direcciones que terminan distinto a ``.1'' (por ejemplo: ``.254'' o ``.230''). Eso es configurable por el administrador de red, y seg\'un pudimos averiguar, aparte de estilarse tener los \textit{gateway} finalizando en ``.1'', tambi\'en se suele guardar las primeras direcciones para nodos particulares como servidores o impresoras, dejando las \'ultimas direcciones para gateways, como inferimos que sucede en este caso.
-% \end{itemize}
-% \indent Para no repetir el an\'alisis granular similar al punto anterior, vamos a trabajar con la muestra grande, que se corresponde con todos los paquetes capturados.
-
-% \indent Las entrop\'ias calculadas para ambas fuentes son:\\
-
-% \begin{center}
-% 	\begin{tabular}{ | c | c | c |} \hline
-% 	   & \textbf{$S_{src}$} & \textbf{$S_{dst}$} \\ \hline
-% 	  	\textbf{Entrop\'ia} & 6,29 bits & 5,40 bits \\ \hline
-% 	\end{tabular}
-% \end{center}
-
-% \indent Como en los an\'alisis anteriores, se realizaron gr\'aficos de barras con la informaci\'on contenida en los s\'imbolos de las fuente con una recta que representa la entrop\'ia de la fuente para contrastar. Recordamos que solamente mostramos en los gr\'aficos los s\'imbolos con menor informaci\'on, es decir aquellos que son suficientes para realizar el an\'alisis pertinente.\\
-
-% \indent Para la fuente \textit{Fuente}, se obtuvo el siguiente gr\'afico:\\
-
-% \begin{center}
-% \includegraphics[scale=0.5,clip=true,trim=100 0 0 0]{graphics/facultad_grande_src.png}
-% \end{center}
-
-% \indent En contraste con los casos de estudio anteriores, parecer\'ia que aqu\'i una mayor cantidad de nodos cumplen con el criterio que establecimos para ser considerados como nodos distinguidos. El que menos informaci\'on contiene es la IP 10.2.100.254.\\
-
-% \indent Para la fuente destino:\\
-% \begin{center}
-% \includegraphics[scale=0.5,clip=true,trim=100 0 0 0]{graphics/facultad_grande_dst.png}
-% \end{center}
-% \indent Se pueden observar claramente cuatro IPs que podr\'iamos considerar distinguidas y una, la 169.254.255.255 con un valor muy similar a la entrop\'ia de la fuente.\\
-
-% \indent Concentr\'andonos en estos candidatos de nodos distinguidos, analizamos el grafo dirigido que representa la captura con el fin de determinar si los resultados se verifican gr\'aficamente como nodos relevantes. Logramos ver que efectivamente hay una relaci\'on, y los nodos que sobresalen en los gr\'aficos. son los que m\'as flechas tienen (desde o hacia ellos, seg\'un corresponda) en los grafos.\\
-% \\
-% \indent Esta ser\'ia toda la red:\\
-% \begin{center}
-% \includegraphics[scale=0.5,clip=true,trim=140 0 0 0]{graphics/toda_la_red.png}
-% \end{center}
-% \newpage
-% \indent Por supuesto, este gr\'afico no parece indicarnos nada a esta escala.\\
-% \indent Si nos acercamos a algunos de los que catalogamos distinguidos, como el nodo 0.0.0.0 del que salen muchos pedidos y no llega ninguno (en sinton\'ia con el an\'alisis realizado que determinaba que era un nodo distinguido para la fuente origen), y el que suponemos es un router (10.2.100.254) del que salen y llegan muchos pedidos, justificando su aparici\'on como nodo distinguido en ambas fuentes:\\
-
-% \begin{center}
-% \includegraphics[scale=0.5,clip=true,trim=140 0 0 0]{graphics/distinguidos.png}
-
-% \includegraphics[scale=0.3,clip=true,trim=140 0 0 0]{graphics/distinguido_todos_ceros.png}
-
-% \includegraphics[scale=0.3,clip=true,trim=140 0 0 0]{graphics/distinguido_router.png}
-% \end{center}
-
-% \newpage
-% \indent Por \'ultimo, queremos dejar sentada nuestra suposici\'on respecto al subneteo y a las m\'ascaras utilizadas. Seg\'un las caracter\'isticas de las direcciones, nos parece correcto asumir que la m\'ascara aplicada en esta red es una /16, dado que todas las direcciones privadas de la red comienzan en ``10.2''. A su vez, creemos que podemos inferir que el tercer n\'umero en la direcci\'on indica una subred, y las 255 direcciones restantes son los identificadores \'unicos de cada m\'aquina en dicha subred. Esto es respaldado por la forma que tienen las distintas partes del grafo que describe a la red. Estas ser\'ian algunas de las subredes:\\
-
-% \includegraphics[scale=0.5,clip=true,trim=140 0 0 0]{graphics/subnet_1.png}
-
-% \indent Es interesante notar que las IP's 10.2.1.130, 10.2.1.149 y 10.2.1.254 parecen relevantes viendo el gr\'afico siendo receptores de muchos pedidos, lo cual se condice con el hecho de que sean nodos distinguidos para la fuente destino. Adem\'as se observa que muchas de los nodos que distinguimos para la fuente origen aparecen como fuente en paquetes ARP que contiene como direcci\'on destino a las tres IP's mencionadas.\\
-
-
-% \includegraphics[scale=0.5,clip=true,trim=140 0 0 0]{graphics/subnet_5.png}
-
-% \indent Este \'ultimo gr\'afico es a efectos de mostrar otra subred, aunque sus nodos no son relevantes de acuerdo al an\'alisis que realizamos.\\
 
 
 \section{Conclusiones}
