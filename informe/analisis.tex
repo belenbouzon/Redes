@@ -184,8 +184,10 @@ En este caso se ve una amplia predominancia de los paquetes de tipo IPv4. Esto s
     \label{bonafideReceptoras}
 \end{figure}
 
+Este caso podr\'ia ser el de m\'as arduo an\'alisis, puesto que es el que mayor caudal de datos presenta. Sin embargo, la gran cantidad de informaci\ón que contiene facilita la distinci\'on de los nodos significativos. \\`
+Como se puede observar en la figura \ref{bonafideEmisoras}, hay cuatro nodos que merecen nuestro reconocimiento: el 7 (192.168.1.100), el 10 (192.168.1.104), el 1 (192.168.1.1) y el 22 (192.168.1.129). Estos aportan un nivel de informaci\'on menor al valor de la entrop\'ia, indicando, en este caso, que se encuentran enviando una gran cantidad de parquetes ARP. Esta deducci\'on no se podr\'ia haber hecho analizando \'unicamente el grafo que representa la red, dado que all\'i tres de dichos nodos no parecen destacarse de los dem\'as.\\
 
-
+En cambio, en la figura \ref{bonafideReceptoras}, se refuerza fuertemente lo que se percibe en el grafo de la imagen \ref{bonafideGraph}: La mínima informaci\'on est\'a vinculada a la IP 192.168.1.1, es decir, al nodo identificado con el n\'umero 1. Con los tres gr\'aficos presentados en conjunto es posible concluir que la IP 192.168.1.1 es la que identifica al router, no s\'olo por la cantidad de paquetes ARP que env\'ia y recibe sino tambi\'en por la estructura de la red que se conforma en torno al dispositivo.
 
 
 \section{Conclusiones}
