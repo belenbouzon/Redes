@@ -13,7 +13,7 @@
 \contentsline {subsubsection}{\numberline {3.2.2}Frecuencia de los distintos tipos de paquetes}{8}{subsubsection.3.2.2}
 \contentsline {subsubsection}{\numberline {3.2.3}Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}{8}{subsubsection.3.2.3}
 \contentsline {subsection}{\numberline {3.3}Red Bonafide}{10}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}Nodos intervinientes}{10}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Frecuencia de los distintos tipos de paquetes}{11}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}{11}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.3.1}Nodos intervinientes}{10}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Frecuencia de los distintos tipos de paquetes}{11}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}{11}{subsubsection.3.3.3}
 \contentsline {section}{\numberline {4}Conclusiones}{11}{section.4}

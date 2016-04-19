@@ -7,9 +7,16 @@ En esta secci\'on presentaremos el an\'alisis de los distintos casos de estudio 
 \subsection{Red dom\'estica}
 
 \subsubsection{Nodos intervinientes}
-\textcolor{red}{HACER ESTE GRAFICO CON LA CASA DE MAXI!}
 
 
+\begin{figure}[h!]
+    \centering                                                       
+    \includegraphics[width=400pt]{img/domesticaGraph.png}
+    \caption{Grafo de Red Doméstica}
+    \label{domesticaGraph}
+\end{figure}
+
+\textcolor{red}{COMPLETAR}
 
 \subsubsection{Frecuencia de los distintos tipos de paquetes}
 
@@ -72,15 +79,15 @@ El nodo 1 tambi\'en se comunica con varios nodos a la vez - esto se debe a que e
 
 Los nodos 10, 8 y 14 parecieran ser nodos particulares que no se conectan con el router. En particular, el nodo 8 es 0.0.0.0, por lo que en realidad es el nodo 5 y 10 comunic\'andose con ellos mismos . El nodo 14 es una IP interna as\'i que posiblemente es un nodo comunic\'andose con una interfaz propia.\\
 
-Luego de ese an\'alisis, consultamos las IPs con la configuraci\'on de la red (a la que tenemos acceso por ser la red de la oficina laboral). Efectivamente, el nodo 4 es el router, as\'i como el nodo 1 el servidor local estimado, y los nodos 2, 3, 7 y 9 los que se comunican con dicho servidor.
+Luego de ese an\'alisis, consultamos las IPs con la configuraci\'on de la red (a la que tenemos acceso por ser la red de la oficina laboral). Efectivamente, el nodo 4 es el router, as\'i como el nodo 1 el servidor local estimado, y los nodos 2, 3, 7 y 9 los que se comunican con dicho servidor.\\
 
-La incertidumbre del nodo 14 se resolvi\'o como una Virtual Network Adapter, producto de una Virtual Box corriendo en el nodo 6.
+La incertidumbre del nodo 14 se resolvi\'o como una Virtual Network Adapter, producto de una Virtual Box corriendo en el nodo 6.\\
 
-Todas las dem\'as relaciones parecen ser naturales, de nodos que se comunican con el router para poder salir a internet.
+Todas las dem\'as relaciones parecen ser naturales, de nodos que se comunican con el router para poder salir a internet.\\
 
 \subsubsection{Frecuencia de los distintos tipos de paquetes}
 
-En el gr\'afico \ref{laboralPaquetes} se pueden ver los resultados de obtenidos. All\'i se observa la predominancia de los paquetes de tipo IPV4. Esto tiene sentido, puesto que en este contexto es m\'as frecuente el intercambio de paquetes a nivel de Internet que el realiazado a nivel de la intranet, con la cual las computadoras se encuentran conectadas a trav\'es de Ethernet \textcolor{red}{ESTO ES ASI? CORREGIR SI NO POR FAVOR}.
+En el gr\'afico \ref{laboralPaquetes} se pueden ver los resultados de obtenidos. All\'i se observa la predominancia de los paquetes de tipo IPV4. Esto tiene sentido, puesto que en este contexto es m\'as frecuente el intercambio de paquetes a nivel de Internet que el realizado a nivel de la intranet, con la cual las computadoras se encuentran conectadas a trav\'es de Ethernet. Esto tambi\'en considerando que las mediciones fueron realizadas en un momento de mucha actividad de pasaje de paquetes en la red.\\
 
 \begin{figure}[h!]
     \centering                                                       
@@ -100,7 +107,7 @@ Comparando las figuras \ref{laboralEmisoras} y \ref{laboralReceptoras} se puede 
     \label{laboralEmisoras}
 \end{figure}
 
-Dentro de las IPs emisoras se puede destacar la participaci\'on activa de el nodo 192.168.1.1, la cu\'al aporta un valor muy pequeño de informaci\'on, encontr\'andose por debajo de la entrop\'ia. Esto indicar\'ia que se trata del host que m\'as paquetes ARP env\'ia dentro de la red. \\
+Dentro de las IPs emisoras se puede destacar la participaci\'on activa de el nodo 192.168.1.1, la cu\'al aporta un valor muy pequeño de informaci\'on, encontr\'andose por debajo de la entrop\'ia. Esto indicar\'ia que se trata del host que m\'as paquetes ARP env\'ia dentro de la red - y esto es correcto, ya que en efecto es el nodo 4, el nodo correspondiente al router.\\
 
 \begin{figure}[h!]
     \centering                                                       
@@ -109,15 +116,15 @@ Dentro de las IPs emisoras se puede destacar la participaci\'on activa de el nod
     \label{laboralReceptoras}
 \end{figure}
 
-Si lo buscamos en el gr\'afico \ref{laboralReceptoras}, el mismo nodo aporta una informaci\'on por encima de la media, pero sin ser destacada. Esto puede deberse a que se trata del Router, el cual debe encargarse de hacer llegar a todo v\'ertice de la red que coordina los mensajes que se transmiten a trav\'es de \'el.\\
-Otro caso a destacar es el de la IP 192.168.1.157 (nodo 7). Este nodo se encuentra en la figura \ref{laboralReceptoras} como aquel que menos informaci\'on reporta, es decir, como el que m\'as frecuentemente recibe requests. \\ \textcolor{red}{POR QUE SERA ASI SI NO ES NI SERVER NI ROUTER? NO SE COMO EXPLICARLO}
+Si lo buscamos en el gr\'afico \ref{laboralReceptoras}, el mismo nodo aporta una informaci\'on por encima de la media, pero sin ser destacada. Es decir, que hay nodos que env\'ian m\'as paquetes que el router. Esto es porque, si bien el router es salida de todos los nodos a internet, las conexiones internas (es decir, entre nodos, con el servidor local, por ejemplo) tienen m\'as peso, y se usan esas conexiones m\'as que la red externa.\\
 
+Otro caso a destacar es el de la IP 192.168.1.157 (nodo 7). Compar\'andolo en ambos gr\'aficos, se lo ve como el punto m\'aximo en uno y el m\'inimo en otro: el nodo 7 es aquel que m\'as paquetes env\'ia y el que m\'as recibe, conect\'andose tanto con el router como con el servidor local. Si bien no pudimos verificar la identidad de dicha IP (pues utilizamos \textit{NAT} para ciertas IPs y esta cae en una de ellas, siendo imposible identificar cu\'al era su identidad al momento de la medici\'on), parece sensato suponer que se debe a un nodo (computadora) trabajando con el servidor y el router a la vez, pudiendo deberse la gran cantidad de paquetes enviado por estar subiendo/copiando material a uno de ellos.\\
 
 \newpage
 \subsection{Red Bonafide}
  Por \'ultimo, dadas las peque\~nas dimensiones de las redes anteriores, decidimos tomar datos de la red p\'ublica ofrecida por el local Bonafide. La captura se realiz\'o por un lapso de media hora en modo promiscuo.
 
-\subsection{Nodos intervinientes}
+\subsubsection{Nodos intervinientes}
 
 En el gr\'afico \ref{bonafideGraph} se pueden ver los resultados de obtenidos.
 
