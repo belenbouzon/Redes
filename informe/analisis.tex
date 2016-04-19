@@ -56,7 +56,19 @@ En este caso, los nodos distinguidos son - por su gran valor de informaci\'on - 
 
 ¿Por qu\'e es tan frecuente que se realicen solicitudes al host cuya IP es 0.0.0.0? Podr\'iamos pensar que se trata de comunicaciones que un nodo env\'ia a s\'i mismo pero tambi\'en cabr\'ia suponer - de acuerdo a lo investigado - que puede tratarse de un mecanismo de chequeo de IP's duplicadas en la red.\\
 
-Comparando ambos gr\'aficos podr\'iamos decir que es bastante com\'un que la IP 169.254.93.30 env\'ie y reciba paquetes ARP. Es por eso que consideramos que podr\'ia ser un potencial candidato a Router. \textcolor{red}{verificar con el grafo.}
+Comparando ambos gr\'aficos podr\'iamos decir que es bastante com\'un que la IP 169.254.93.30 env\'ie y reciba paquetes ARP. Es por eso que consideramos que podr\'ia ser un potencial candidato a Router.
+
+Viendo otros datos calculados, observamos que el muestreo de la red detect\'o un alto \'indice de pedidos de direcci\'on por parte del dispositivo con IP 192.168.0.1, el cual contact\'o a varios dispositivos en m\'ultiples ocasiones. Puntualmente, se destac\'o el dispositivo con la IP 192.168.0.107, en el cu\'al hubo 180 solicitudes, contra una 6 solicitudes por parte del 192.168.0.107 al 192.168.0.1.
+
+Por otro lado los dispositivos con la IP 192.168.0.106 y 192.168.0.108 enviaron una alta cantidad de solicitudes al  192.168.0.1 (respecto de la media).
+
+Viendo esto, podemos decir que el dispositivo con IP 192.168.0.1 es un nodo importante en la red, por lo cual pensamos que puede ser otro candidato a ser el Router. Se puede deducir que durante un periodo prolongado el dispositivo 192.168.0.107 estuvo extrayendo informaci\'on del nodo, lo cual explicar\'ia por qu\'e existe un trafico de paquetes m\'as elevado desde el nodo hasta el  192.168.0.107 que desde este \'ultimo al nodo..
+
+En el caso del dispositivo con IP 192.168.0.106, y 192.168.0.108 las solicitudes para buscar al nodo podr\'ian deberse a que estos estaban enviando informaci\'on al nodo.
+
+La mayor\'ia de los dispositivos conten\'ia una IP con el prefijo de 192.168.0, con lo cual se puede deducir que \'esta es la IP de la red analizada. Adem\'as, se han detectado paquetes provenientes de redes privadas distintas (puntualmente de dos dispositivos).
+
+Se registr\'o un trafico m\'inimo entre dispositivos en donde el 192.168.0.1 no estuvo involucrado.
 
 \newpage
 \subsection{Red Laboral}
