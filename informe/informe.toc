@@ -8,12 +8,12 @@
 \contentsline {subsubsection}{\numberline {3.1.1}Nodos intervinientes}{4}{subsubsection.3.1.1}
 \contentsline {subsubsection}{\numberline {3.1.2}Frecuencia de los distintos tipos de paquetes}{4}{subsubsection.3.1.2}
 \contentsline {subsubsection}{\numberline {3.1.3}Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}{4}{subsubsection.3.1.3}
-\contentsline {subsection}{\numberline {3.2}Red Laboral}{7}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Nodos intervinientes}{7}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Frecuencia de los distintos tipos de paquetes}{8}{subsubsection.3.2.2}
-\contentsline {subsubsection}{\numberline {3.2.3}Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}{8}{subsubsection.3.2.3}
-\contentsline {subsection}{\numberline {3.3}Red Bonafide}{10}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Nodos intervinientes}{10}{subsubsection.3.3.1}
-\contentsline {subsubsection}{\numberline {3.3.2}Frecuencia de los distintos tipos de paquetes}{11}{subsubsection.3.3.2}
-\contentsline {subsubsection}{\numberline {3.3.3}Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}{11}{subsubsection.3.3.3}
-\contentsline {section}{\numberline {4}Conclusiones}{11}{section.4}
+\contentsline {subsection}{\numberline {3.2}Red Laboral}{8}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Nodos intervinientes}{8}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Frecuencia de los distintos tipos de paquetes}{9}{subsubsection.3.2.2}
+\contentsline {subsubsection}{\numberline {3.2.3}Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}{9}{subsubsection.3.2.3}
+\contentsline {subsection}{\numberline {3.3}Red Bonafide}{12}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Nodos intervinientes}{12}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Frecuencia de los distintos tipos de paquetes}{13}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}{13}{subsubsection.3.3.3}
+\contentsline {section}{\numberline {4}Conclusiones}{15}{section.4}
