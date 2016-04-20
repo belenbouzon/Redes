@@ -16,7 +16,6 @@ En esta secci\'on presentaremos el an\'alisis de los distintos casos de estudio 
     \label{domesticaGraph}
 \end{figure}
 
-\textcolor{red}{COMPLETAR}
 
 \subsubsection{Frecuencia de los distintos tipos de paquetes}
 
@@ -29,6 +28,10 @@ En el gr\'afico \ref{domesticaPaquetes} se pueden ver los resultados de obtenido
     \label{domesticaPaquetes}
 \end{figure}
 
+
+En la red analizada exist\'ian dos m\'aquinas conectadas por cable al router y el resto estaban enlazados al mismo utilizando el wifi, entre ellos la computadora en la cual se ejecut\'o el algoritmo de captura de paquetes. Esto podr\'ia explicar la presencia de dos redes en las mediciones, una de ellas (169.254) es la red formada por las dos computadoras enlazadas por cable y el proxy que se comunica con internet y la otra red (192.168.0) es la conformada por los dispositivos WiFi. Si esto es cierto el 169.254.93.30 podr\'ia ser el proxy y el 192.168.0.1 el nodo que rutea a los dispositivos de la red de wifi a la red del proxy.\\
+El grafo muestra que el IP 0.0.0.0 (nodo 4) tuvo contacto con cinco nodos. Puntualmente El 0.0.0.0 envi\'o datos a cuatro nodos cuyos IP tuvieron actividad con otros nodos de la red, con lo cual se puede deducir esos mensajes provenian de los dispositivos reporesentados por esos cuatro nodos, que intentaban determinar si exist\'ian duplicados de su IP en la red. \\
+El nodo 169.254.93.30 es el \'unico env\'ia paquetes al 0.0.0.0, lo cual puede tratarse de un mecanismo de IP para enviar informaci\'on a todas las redes.\\
 \subsubsection{Informaci\'on de las fuentes emisoras y receptoras de paquetes ARP.}
 
 Para realizar este caso comparamos la informaci\'on proporcionada por las fuentes emisoras de paquetes ARP e ilustramos asimismo la entrop\'ia de la fuente. Los resultados se pueden observar en los gr\'aficos \ref{domesticaEmisoras} y \ref{domesticaReceptoras}
@@ -69,9 +72,6 @@ La mayor\'ia de los dispositivos conten\'ia una IP con el prefijo de 192.168.0, 
 
 Se registr\'o un trafico m\'inimo entre dispositivos en donde el 192.168.0.1 no estuvo involucrado.
 
-En la red analizada exist\'ian dos fvble al router wifi y el resto estaban enlazados al mismo utilizando el wifi, incluso la computadora en la cual se ejecut\'o el algoritmo de captura de paquetes. Esto podr\'ia explicar la presencia de dos redes en las mediciones, una de ellas (169.254) es la red formada por las dos computadoras enlazadas por cable y el proxy que se comunica con internet y la otra red (192.168.0) es la conformada por los dispositivos WiFi. Si esto es cierto el 169.254.93.30 podr\'ia ser el proxy y el 192.168.0.1 el nodo que rutea a los dispositivos de la red de wifi a la red del proxy.\\
-El grafo muestra que el IP 0.0.0.0 (nodo 4) tuvo contacto con cinco nodos. Puntualmente El 0.0.0.0 envi\'o datos a cuatro nodos cuyos IP tuvieron actividad con otros nodos de la red, con lo cual se puede deducir esos mensajes provenian de los dispositivos reporesentados por esos cuatro nodos, que intentaban determinar si exist\'ian duplicados de su IP en la red. \\
-El nodo 169.254.93.30 es el \'unico env\'ia paquetes al 0.0.0.0, lo cual puede tratarse de un mecanismo de IP para enviar informaci\'on a todas las redes.\\
 
 \newpage
 \subsection{Red Laboral}
@@ -153,7 +153,7 @@ Si bien el grafo resultante no es exactamente la idea previa que ten\'iamos de \
 Consideramos que estos datos son suficientes como para deducir que dicha direcci\'on IP coincide con la del router.\\
 Al indagar acerca de la naturaleza de los \'unicos nodos que no se encuentran conectados de forma directa al nodo 1 (el 5 (192.168.1.110), el 16 (192.168.1.4), el 23(0.0.0.0) y el 20 (169.254.201.232)) llegamos a las siguientes conclusiones: \\
 \begin{itemize}
-	\item Tanto el nodo 5 como el 16 (ambos de clase C) se comunican con el router a trav\'es del nodo 11 (192.168.1.105). Ahondando en las caracter\'isticas de estas transferencias, se puede ver que el nodo 11 realiza requests a los nodos 1, 5 y 16, pero s\'olo llega a \'el un request desde el nodo 16. Podr\'iamos entonces inferir que el nodo 11 puede estar funcionando como switch.\textcolor{red}{REVISAR}
+	\item Tanto el nodo 5 como el 16 (ambos de clase C) se comunican con el router a trav\'es del nodo 11 (192.168.1.105). Ahondando en las caracter\'isticas de estas transferencias, se puede ver que el nodo 11 realiza requests a los nodos 1, 5 y 16, pero s\'olo llega a \'el un request desde el nodo 16. Podr\'iamos entonces inferir que el nodo 11 puede estar funcionando como switch.
 	\item El nodo 20 se conecta al 23 y \'este \'ultimo al 7 (192.168.1.100). Esto forma la secuencia 169.254.201.232 (clase B)- 0.0.0.0 - 192.168.1.100 (clase C) - router. Si bien no se trata de un grafo dirigido, se puede ver en los resultados que la direcci\'on 0.0.0.0 nunca recibe datos que podamos escuchar, si no que env\'ia requests a ambos nodos que lo circundan.\\ De acuerdo a lo investigado, inferimos que se trata de un fen\'omeno que ocurre cuando un nuevo host se conecta a la IP, con el fin de verificar que no tenga una direcci\'on que se encuentre en uso, evitando as\'i las IP duplicadas.\\
 \end{itemize}
 

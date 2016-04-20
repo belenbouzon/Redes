@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.18)  19 APR 2016 23:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.4.18)  20 APR 2016 19:57
 entering extended mode
 **./informe.tex
 (informe.tex
@@ -950,176 +950,179 @@ File: img/domesticaGraph.png Graphic file (type png)
 Package pdftex.def Info: img/domesticaGraph.png used on input line 14.
 (pdftex.def)             Requested size: 400.0pt x 340.8981pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 21.
+(babel)             in language append on input line 20.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 21.
+(babel)             in language append on input line 20.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 21.
+(babel)             in language append on input line 20.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 21.
+(babel)             in language append on input line 20.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 21.
+(babel)             in language append on input line 20.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 21.
+(babel)             in language append on input line 20.
 
 <img/DomesticaFrecuenciaVsTipoPaquetes.png, id=128, 1178.90437pt x 860.46469pt>
 File: img/DomesticaFrecuenciaVsTipoPaquetes.png Graphic file (type png)
 <use img/DomesticaFrecuenciaVsTipoPaquetes.png>
 Package pdftex.def Info: img/DomesticaFrecuenciaVsTipoPaquetes.png used on inpu
-t line 27.
+t line 26.
 (pdftex.def)             Requested size: 400.0pt x 291.95016pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 32.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 32.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 32.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 32.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 32.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 32.
-<img/RedDomesticaFuentesEmisorasARP.png, id=131, 754.4988pt x 550.6974pt>
-File: img/RedDomesticaFuentesEmisorasARP.png Graphic file (type png)
 
-<use img/RedDomesticaFuentesEmisorasARP.png>
-Package pdftex.def Info: img/RedDomesticaFuentesEmisorasARP.png used on input l
-ine 38.
-(pdftex.def)             Requested size: 400.0pt x 291.96066pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<img/RedDomesticaFuentesReceptorasARP.png, id=132, 754.4988pt x 550.6974pt>
-File: img/RedDomesticaFuentesReceptorasARP.png Graphic file (type png)
-
-<use img/RedDomesticaFuentesReceptorasARP.png>
-Package pdftex.def Info: img/RedDomesticaFuentesReceptorasARP.png used on input
- line 48.
-(pdftex.def)             Requested size: 400.0pt x 291.96066pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 53--55
+Underfull \hbox (badness 10000) in paragraph at lines 32--35
 
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 35.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 35.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 35.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 35.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 35.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 35.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 38.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 38.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 38.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 38.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 38.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 55.
+(babel)             in language append on input line 38.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 38.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 38.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 38.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 38.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 38.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 38.
 [4pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.55 
+l.38 
       <./img/domesticaGraph.png>]
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 55.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 55.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 55.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 55.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 55.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 55.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 55.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 55.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 55.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 55.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 55.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 55.
- [5pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
- has been already used, duplicate ignored
+<img/RedDomesticaFuentesEmisorasARP.png, id=138, 754.4988pt x 550.6974pt>
+File: img/RedDomesticaFuentesEmisorasARP.png Graphic file (type png)
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.55 
-     pdfTeX warning (ext4): destination with the same identifier (name{figure.3
-}) has been already used, duplicate ignored
+<use img/RedDomesticaFuentesEmisorasARP.png>
+Package pdftex.def Info: img/RedDomesticaFuentesEmisorasARP.png used on input l
+ine 41.
+(pdftex.def)             Requested size: 400.0pt x 291.96066pt.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.55 
-      <./img/DomesticaFrecuenciaVsTipoPaquetes.png> <./img/RedDomesticaFuentesE
-misorasARP.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/RedDomesticaFuentesReceptorasARP.png, id=139, 754.4988pt x 550.6974pt>
+File: img/RedDomesticaFuentesReceptorasARP.png Graphic file (type png)
+
+<use img/RedDomesticaFuentesReceptorasARP.png>
+Package pdftex.def Info: img/RedDomesticaFuentesReceptorasARP.png used on input
+ line 51.
+(pdftex.def)             Requested size: 400.0pt x 291.96066pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--58
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 72--75
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 75.
+(babel)             in language append on input line 68.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 75.
+(babel)             in language append on input line 68.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 75.
+(babel)             in language append on input line 68.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 75.
+(babel)             in language append on input line 68.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 75.
+(babel)             in language append on input line 68.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 75.
+(babel)             in language append on input line 68.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language append on input line 75.
+(babel)             in language append on input line 68.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language append on input line 75.
+(babel)             in language append on input line 68.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language append on input line 75.
+(babel)             in language append on input line 68.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language append on input line 75.
+(babel)             in language append on input line 68.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language append on input line 75.
+(babel)             in language append on input line 68.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language append on input line 75.
-[6pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) 
+(babel)             in language append on input line 68.
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.75 
-      <./img/RedDomesticaFuentesReceptorasARP.png>]
+l.68 
+      <./img/DomesticaFrecuenciaVsTipoPaquetes.png>]
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 71.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 71.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 71.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 71.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 71.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 71.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language append on input line 71.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language append on input line 71.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language append on input line 71.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language append on input line 71.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language append on input line 71.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language append on input line 71.
+ [6pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.71 L
+      a mayor\'ia de los dispositivos conten\'ia una IP con el prefijo de 19...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
+s been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.71 L
+      a mayor\'ia de los dispositivos conten\'ia una IP con el prefijo de 19...
+ <./img/RedDomesticaFuentesEmisorasARP.png> <./img/RedDomesticaFuentesReceptora
+sARP.png>]
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language append on input line 76.
 Package babel Info: Redefining spanish shorthand >>
@@ -1169,10 +1172,10 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language append on input line 81.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language append on input line 81.
-
-<img/laboralGraph.png, id=159, 578.16pt x 578.16pt>
+ <img/laboralGraph.png, id=159, 578.16pt x 578.16pt>
 File: img/laboralGraph.png Graphic file (type png)
- <use img/laboralGraph.png>
+
+<use img/laboralGraph.png>
 Package pdftex.def Info: img/laboralGraph.png used on input line 86.
 (pdftex.def)             Requested size: 400.0pt x 399.99829pt.
 
@@ -1668,7 +1671,7 @@ Here is how much of TeX's memory you used:
  10723 multiletter control sequences out of 15000+200000
  6578 words of font info for 24 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 32i,12n,43p,1008b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 32i,13n,43p,1008b,412s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
 <C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/
@@ -1682,7 +1685,7 @@ x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files (x8
 6)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/M
 iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on informe.pdf (16 pages, 1789427 bytes).
+Output written on informe.pdf (16 pages, 1789402 bytes).
 PDF statistics:
  279 PDF objects out of 1000 (max. 8388607)
  47 named destinations out of 1000 (max. 500000)
