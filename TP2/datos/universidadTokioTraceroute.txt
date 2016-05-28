@@ -1,0 +1,31 @@
+traceroute to www.u-tokyo.ac.jp (210.152.135.178), 30 hops max, 60 byte packets
+ 1  192.168.0.1 (192.168.0.1)  0.234 ms  0.289 ms  0.379 ms
+ 2  1-1-246-190.fibertel.com.ar (190.246.1.1)  136.048 ms  136.352 ms  136.556 ms
+ 3  * * *
+ 4  * * *
+ 5  77-161-89-200.fibertel.com.ar (200.89.161.77)  16.107 ms  16.112 ms 145-164-89-200.fibertel.com.ar (200.89.164.145)  22.140 ms
+ 6  197-165-89-200.fibertel.com.ar (200.89.165.197)  19.060 ms  27.818 ms 130-165-89-200.fibertel.com.ar (200.89.165.130)  26.850 ms
+ 7  194-161-89-200.fibertel.com.ar (200.89.161.194)  26.123 ms  26.221 ms  26.254 ms
+ 8  * * *
+ 9  193-161-89-200.fibertel.com.ar (200.89.161.193)  19.744 ms  19.777 ms  13.531 ms
+10  222-165-89-200.fibertel.com.ar (200.89.165.222)  21.493 ms  17.492 ms  20.754 ms
+11  185.70.203.88 (185.70.203.88)  16.618 ms  18.275 ms  15.371 ms
+12  ae7.sanpaolo8.spa.seabone.net (195.22.219.17)  44.402 ms  40.347 ms et-10-1-0.sanpaolo8.spa.seabone.net (195.22.219.145)  39.711 ms
+13  et-4-1-0.sanpaolo8.spa.seabone.net (195.22.219.75)  40.052 ms ae7.sanpaolo8.spa.seabone.net (195.22.219.17)  38.300 ms et-10-1-0.sanpaolo8.spa.seabone.net (195.22.219.145)  37.649 ms
+14  149.3.181.65 (149.3.181.65)  150.316 ms  150.335 ms  150.378 ms
+15  ae-4.r24.nycmny01.us.bb.gin.ntt.net (129.250.2.227)  159.823 ms  159.746 ms  149.979 ms
+16  ae-2.r20.sttlwa01.us.bb.gin.ntt.net (129.250.4.13)  199.057 ms  203.888 ms  203.386 ms
+17  ae-0.r21.sttlwa01.us.bb.gin.ntt.net (129.250.2.54)  207.103 ms  202.364 ms  198.537 ms
+18  ae-2.r20.osakjp02.jp.bb.gin.ntt.net (129.250.3.86)  311.002 ms  295.053 ms  304.979 ms
+19  * ae-4.r22.osakjp02.jp.bb.gin.ntt.net (129.250.6.188)  289.920 ms  324.314 ms
+20  ae-2.r01.osakjp02.jp.bb.gin.ntt.net (129.250.3.199)  321.465 ms  304.183 ms  298.757 ms
+21  xe-0-4-0-7.r01.osakjp02.jp.ce.gin.ntt.net (61.200.80.218)  338.845 ms  311.192 ms  362.091 ms
+22  ae0.ostcr01.idc.jp (158.205.192.173)  349.646 ms  302.086 ms  330.423 ms
+23  158.205.192.86 (158.205.192.86)  348.634 ms  351.328 ms  352.018 ms
+24  po2.l321.fk1.eg.idc.jp (158.205.121.250)  304.548 ms  320.595 ms  319.676 ms
+25  * * *
+26  * * *
+27  * * *
+28  * * *
+29  * * *
+30  * * *

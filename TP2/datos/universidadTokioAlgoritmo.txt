@@ -1,0 +1,76 @@
+WARNING: No route found for IPv6 destination :: (no default route?)
+TTL: 1
+192.168.0.1
+tiempo total:544.64006424 ms
+TTL: 2
+190.246.1.1
+tiempo total:95.7419872284 ms
+TTL: 3
+NO CONTESTO
+TTL: 4
+NO CONTESTO
+TTL: 5
+200.89.166.153
+tiempo total:99.8528003693 ms
+TTL: 6
+200.89.165.130
+tiempo total:83.7180614471 ms
+TTL: 7
+200.89.161.194
+tiempo total:83.7080478668 ms
+TTL: 8
+NO CONTESTO
+TTL: 9
+200.89.161.193
+tiempo total:79.8180103302 ms
+TTL: 10
+200.89.165.222
+tiempo total:75.6888389587 ms
+TTL: 11
+185.70.203.88
+tiempo total:75.7160186768 ms
+TTL: 12
+195.22.219.145
+tiempo total:103.714942932 ms
+TTL: 13
+195.22.219.145
+tiempo total:103.736877441 ms
+TTL: 14
+149.3.181.65
+tiempo total:211.689949036 ms
+TTL: 15
+129.250.2.227
+tiempo total:231.745958328 ms
+TTL: 16
+129.250.4.13
+tiempo total:283.68806839 ms
+TTL: 17
+129.250.2.54
+tiempo total:287.712097168 ms
+TTL: 18
+129.250.3.86
+tiempo total:363.71588707 ms
+TTL: 19
+129.250.6.188
+tiempo total:371.721982956 ms
+TTL: 20
+129.250.2.255
+tiempo total:359.709024429 ms
+TTL: 21
+61.200.80.218
+tiempo total:375.730991364 ms
+TTL: 22
+158.205.192.173
+tiempo total:379.707098007 ms
+TTL: 23
+158.205.192.86
+tiempo total:407.716035843 ms
+TTL: 24
+158.205.121.250
+tiempo total:375.694990158 ms
+TTL: 25
+154.34.240.254
+tiempo total:371.692180634 ms
+TTL: 26
+210.152.135.178
+Servidor Respondio
