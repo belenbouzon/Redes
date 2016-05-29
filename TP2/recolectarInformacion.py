@@ -13,6 +13,7 @@ def listaRepetidos (numero,cantidad):
 	return lista
 if len(sys.argv) < 7:
 	print '<pagina web> <ttlInicial> <ttlFinal> <cantidadIteraciones> <timeOut> <cantidadIntentos>'
+	print 'Agregar --noReintentar si no se quiere que se vuelva a iterar sobre una coneccion que no contesto'
 	quit()
 
 paginaWeb = sys.argv[1]
@@ -21,6 +22,10 @@ ttlFinal = int(sys.argv[3])
 cantidadIteraciones = int(sys.argv[4])
 tout = int(sys.argv[5])
 cantidadIntentos = int(sys.argv[6])
+sinIteracionesDeColgados = False
+
+if len(sys.argv)>=8 and sys.argv[7]=='--noReintentar':
+	sinIteracionesDeColgados = True
 
 j = ttlInicial
 while j <= ttlFinal:
@@ -42,7 +47,8 @@ while j <= ttlFinal:
 				tiempoConIteraciones = tiempoConIteraciones + tiempo
 				respondieron = respondieron + 1
 		iteracion = iteracion + 1
-	iteracion = iteracion + 1
+		if sinIteracionesDeColgados==True and contesto==False:
+			iteracion = cantidadIteraciones + 1
 	#print 'TTL: ' + str(j)
 	sys.stderr.write('TTL: ' + str(j) + '\n')
 	if respondieron > 0:
