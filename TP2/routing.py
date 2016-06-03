@@ -13,15 +13,21 @@ EXACTAS = "dc.uba.ar"
 
 # Universidades - http://www.webometrics.info/es/Europe
 
-universities = {'inglaterra' : 'www.ox.ac.uk',
-				'finlandia' : 'www.helsinki.fi',
-				'alemania' : 'www.uva.nl',
-				'belgica' : 'www.kuleuven.be',
-				'noruega' : 'www.uio.no',
+universities = {'inglaterra' : 'leeds.ac.uk',
+				'finlandia' : 'jyu.fi',
 				'israel' : 'new.huji.ac.il',
 				'italia' : 'www.uniroma1.it',
 				'japon' : 'www.u-tokyo.ac.jp',
-				'australia' : 'www.utas.edu.au'
+				'australia' : 'sydney.edu.au',
+				'india': 'www.du.ac.in',
+				'marruecos': 'www.uca.ma',
+				'rusia': 'www.msu.ru',
+				'canada': 'www.utoronto.ca',
+				'iran': 'www.iust.ac.ir',
+				'sudafrica': 'www.unisa.ac.za',
+				'mexico': 'www.udem.edu.mx',
+				'china': 'en.scut.edu.cn',
+				'madagascar': 'www.univ-antananarivo.mg' # esta esta buena, es una isla pasando africa
 				 }
 
 
@@ -126,7 +132,7 @@ class Route:
 					self.hops[i].rtti = 0.0
 				else:
 		
-					if not last_rtt_not_zero:
+					if last_rtt_not_zero:
 						self.hops[i].rtti = self.hops[i].rtt - last_rtt_not_zero
 					else:
 						self.hops[i].rtti = self.hops[i].rtt
