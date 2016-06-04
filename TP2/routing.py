@@ -27,7 +27,17 @@ universities = {'inglaterra' : 'leeds.ac.uk',
 				'sudafrica': 'www.unisa.ac.za',
 				'mexico': 'www.udem.edu.mx',
 				'china': 'en.scut.edu.cn',
-				'madagascar': 'www.univ-antananarivo.mg' # esta esta buena, es una isla pasando africa
+				'madagascar': 'www.univ-antananarivo.mg' , # esta esta buena, es una isla pasando africa
+				'portugal': 'www.up.pt' ,
+				'egipto': 'www.azhar.edu.eg' ,
+				'austria': 'www.univie.ac.at' ,
+				'suecia': 'www.lunduniversity.lu.se' ,
+				'EEUU': 'www.harvard.edu' ,
+				'nigeria': 'www.nou.edu.ng' ,
+				'espania': 'www.uam.es' ,
+				'oxford': 'www.ox.ac.uk' ,
+				'islandia': 'english.hi.is' ,
+				'indonesia': 'www.ui.ac.id'
 				 }
 
 
