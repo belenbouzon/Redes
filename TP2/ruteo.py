@@ -8,12 +8,9 @@ import time
 
 from scapy.all import *
 
-GOOGLE = "www.google.com"
-EXACTAS = "dc.uba.ar"
-
 # Universidades - http://www.webometrics.info/es/Europe
 
-universities = {'inglaterra' : 'leeds.ac.uk',
+universidades = {'inglaterra' : 'leeds.ac.uk',
 				'finlandia' : 'jyu.fi',
 				'israel' : 'new.huji.ac.il',
 				'italia' : 'www.uniroma1.it',
@@ -43,19 +40,16 @@ universities = {'inglaterra' : 'leeds.ac.uk',
 
 # Constantes
 
-MAX_TTL = 255
+max_ttl = 30
 
-ECHO_REPLY = 0
-ECHO_REQUEST = 11
+echo_reply = 0
+echo_request = 11
 
-false = False
-true = True
+geoip_file = "GeoLiteCity.dat"
+repeat_limit = 3
+cant_not_replys_limit = 3
 
-GEOIP_CITY_DAT = "GeoLiteCity.dat"
-REPEAT_COUNT = 3
-CANT_NOT_REPLYS = 3
-
-class Hop:
+class Salto:
 	ttl = 0
 	packet = None
 	rtt = 0.0
@@ -69,21 +63,21 @@ class Hop:
 class Route:
 	def __init__(self):
 		self.hops = []
-		self.geoip = pygeoip.GeoIP(GEOIP_CITY_DAT)
+		self.geoip = pygeoip.GeoIP(geoip_file)
 
 	def trace(self, hostname):
 		
 		self.hops = []
 
-		hasReply = true
+		hasReply = True
 		print "Route: " + hostname
 
 		cant_not_replys = 0
-		for ttl in range(1,MAX_TTL+1):
+		for ttl in range(1,max_ttl+1):
 
 			rtt_total = 0
 			rtt_count = 0	
-			for i in range(REPEAT_COUNT):
+			for i in range(repeat_limit):
 			
 				packet = IP(dst=hostname, ttl=ttl) / ICMP()
 				rtt = time.clock()
@@ -111,25 +105,25 @@ class Route:
 			if answer:
 				record = self.geoip.record_by_name(answer.src)
 			
-			self.hops.append(Hop(ttl=ttl, packet_ip=answer_ip, rtt=rtt_prom, geoip=record, cimbala=0.0))
+			self.hops.append(Salto(ttl=ttl, packet_ip=answer_ip, rtt=rtt_prom, geoip=record, cimbala=0.0))
 
 			if answer:
 				hop = str(answer.src)
 				hop += "\t" + str(rtt)
 				if record:
-					hop += "\t" + str(record['time_zone'])
+					hop += "\tPosible locacion: " + str(record['time_zone'])
 				print hop
 			else:
 				print "* * *"
 
-			if (answer and answer.type == ECHO_REPLY) or cant_not_replys >= CANT_NOT_REPLYS * REPEAT_COUNT:
-				hasReply = true
+			if (answer and answer.type == echo_reply) or cant_not_replys >= cant_not_replys_limit * repeat_limit:
+				hasReply = True
 				break
 
 		if hasReply:
-			print "done!"
+			print "Listo."
 		else:
-			print "fail."
+			print "Error."
 
 	def get_data(self):
 
@@ -174,13 +168,14 @@ class Route:
 		print "Average-SD: " + str(average - standard_deviation).replace('.', ',')
 
 		line = "IP"
-		line += "\t" + "cimbala"
-		line += "\t" + "rtti"
+		line += "\t" + "Cimbala"
+		line += "\t" + "RTTI Intervalo"
 		line += "\t" + "average"
 		line += "\t" + "variance"
 		line += "\t" + "Average+SD"
 		line += "\t" + "Average-SD"
 		print line
+		print "-" * 80
 
 		for hop in self.hops:
 			line = ""
@@ -189,9 +184,6 @@ class Route:
 				hop.cimbala = 0 # Deberiamos hacer la cuenta
 
 				line += hop.packet_ip
-				
-				if hop.geoip:
-					line += "(" + str(hop.geoip['time_zone']) + ")"
 
 			else:
 				line += "*"
@@ -208,7 +200,7 @@ class Route:
 def main(argv=sys.argv):
 	route = Route()
 
-	route.trace(universities[argv[1]])
+	route.trace(universidades[argv[1]])
 	route.get_data()
 
 if __name__ == '__main__':
