@@ -61,7 +61,7 @@ class Hop:
 	rtt = 0.0
 	rtti = 0.0
 	geoip = None
-	zscore = 0.0
+	cimbala = 0.0
 
 	def __init__(self, **kwds):
 		self.__dict__.update(kwds)
@@ -111,7 +111,7 @@ class Route:
 			if answer:
 				record = self.geoip.record_by_name(answer.src)
 			
-			self.hops.append(Hop(ttl=ttl, packet_ip=answer_ip, rtt=rtt_prom, geoip=record, zscore=0.0))
+			self.hops.append(Hop(ttl=ttl, packet_ip=answer_ip, rtt=rtt_prom, geoip=record, cimbala=0.0))
 
 			if answer:
 				hop = str(answer.src)
@@ -131,7 +131,7 @@ class Route:
 		else:
 			print "fail."
 
-	def zscore(self):
+	def get_data(self):
 
 		self.hops[0].rtti = self.hops[0].rtt
 		last_rtt_not_zero = None
@@ -174,7 +174,7 @@ class Route:
 		print "Average-SD: " + str(average - standard_deviation).replace('.', ',')
 
 		line = "IP"
-		line += "\t" + "zscore"
+		line += "\t" + "cimbala"
 		line += "\t" + "rtti"
 		line += "\t" + "average"
 		line += "\t" + "variance"
@@ -186,7 +186,8 @@ class Route:
 			line = ""
 
 			if hop.packet_ip != "":
-				hop.zscore = (hop.rtti - average) / standard_deviation
+				hop.cimbala = 0 # Deberiamos hacer la cuenta
+
 				line += hop.packet_ip
 				
 				if hop.geoip:
@@ -195,7 +196,7 @@ class Route:
 			else:
 				line += "*"
 
-			line += "\t" + str(hop.zscore).replace('.', ',')
+			line += "\t" + str(hop.cimbala).replace('.', ',')
 			line += "\t" + str(hop.rtti).replace('.', ',')
 			line += "\t" + str(average).replace('.', ',')
 			line += "\t" + str(standard_deviation).replace('.', ',')
@@ -208,12 +209,7 @@ def main(argv=sys.argv):
 	route = Route()
 
 	route.trace(universities[argv[1]])
-	route.zscore()
-
-#	for university in universities:
-#		route.trace(universities[university])
-#		route.zscore()
-#		print "-" * 80
+	route.get_data()
 
 if __name__ == '__main__':
 	main()
