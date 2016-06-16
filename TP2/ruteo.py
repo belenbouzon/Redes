@@ -112,7 +112,7 @@ class Route:
 
 			if answer:
 				hop = str(answer.src)
-				hop += "\t" + str(rtt)
+				hop += "\t" + str(rtt_prom)
 				if record:
 					hop += "\tPosible locacion: " + str(record)
 				print hop
@@ -170,13 +170,10 @@ class Route:
 		print "Average+SD: " + str(average + standard_deviation).replace('.', ',')
 		print "Average-SD: " + str(average - standard_deviation).replace('.', ',')
 
-		line = "IP"
-		line += "\t" + "Cimbala"
+		line = "IP\t"
+		line += "\t" + "Pais"
 		line += "\t" + "RTTI Intervalo"
-		line += "\t" + "average"
-		line += "\t" + "variance"
-		line += "\t" + "Average+SD"
-		line += "\t" + "Average-SD"
+		line += "\t" + "Cimbala"
 		print line
 		print "-" * 80
 
@@ -189,14 +186,11 @@ class Route:
 				line += hop.packet_ip
 
 			else:
-				line += "*"
+				line += "***.***.***.***"
 
-			line += "\t" + str(hop.cimbala).replace('.', ',')
+			line += "\t" + str(hop.geoip).replace('.', ',')
 			line += "\t" + str(hop.rtti).replace('.', ',')
-			line += "\t" + str(average).replace('.', ',')
-			line += "\t" + str(standard_deviation).replace('.', ',')
-			line += "\t" + str(average + standard_deviation).replace('.', ',')
-			line += "\t" + str(average - standard_deviation).replace('.', ',')
+			line += "\t" + str(hop.cimbala).replace('.', ',')
 			
 			print line
 
