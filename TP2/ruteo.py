@@ -2,7 +2,7 @@
 
 import collections
 import math
-import pygeoip
+from geoip import geolite2
 import sys
 import time
 
@@ -63,7 +63,6 @@ class Salto:
 class Route:
 	def __init__(self):
 		self.hops = []
-		self.geoip = pygeoip.GeoIP(geoip_file)
 
 	def trace(self, hostname):
 		
@@ -103,7 +102,11 @@ class Route:
 			record = None
 
 			if answer:
-				record = self.geoip.record_by_name(answer.src)
+				match = geolite2.lookup(answer_ip)
+				if match is not None:
+					record = match.country
+				else:
+					record = None
 			
 			self.hops.append(Salto(ttl=ttl, packet_ip=answer_ip, rtt=rtt_prom, geoip=record, cimbala=0.0))
 
@@ -111,7 +114,7 @@ class Route:
 				hop = str(answer.src)
 				hop += "\t" + str(rtt)
 				if record:
-					hop += "\tPosible locacion: " + str(record['time_zone'])
+					hop += "\tPosible locacion: " + str(record)
 				print hop
 			else:
 				print "* * *"
