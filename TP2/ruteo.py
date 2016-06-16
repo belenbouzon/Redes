@@ -37,6 +37,10 @@ universidades = {'inglaterra' : 'leeds.ac.uk',
 				'indonesia': 'www.ui.ac.id'
 				 }
 
+## Modified Thompson de Cimbala
+## Uso: thompson[n]. Por ejemplo, thompson[3] retorna 1.1511
+thompson = [0, 0, 0, 1.1511, 1.4250, 1.5712, 1.6563, 1.7110, 1.7491, 1.7770, 1.7984, 1.8153, 1.8290, 1.8403, 1.8498, 1.8579, 1.8649, 1.8710, 1.8764, 1.8811, 1.8853, 1.8891, 1.8926, 1.8957, 1.8985, 1.9011, 1.9035, 1.9057, 1.9078, 1.9096, 1.9114, 1.9130, 1.9146]
+
 
 # Constantes
 
@@ -201,4 +205,5 @@ def main(argv=sys.argv):
 	route.get_data()
 
 if __name__ == '__main__':
-	main()
+	print thompson[3]
+	#main()
