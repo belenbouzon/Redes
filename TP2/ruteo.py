@@ -49,7 +49,6 @@ max_ttl = 30
 echo_reply = 0
 echo_request = 11
 
-geoip_file = "GeoLiteCity.dat"
 repeat_limit = 3
 cant_not_replys_limit = 3
 
@@ -205,5 +204,4 @@ def main(argv=sys.argv):
 	route.get_data()
 
 if __name__ == '__main__':
-	print thompson[3]
-	#main()
+	main()
