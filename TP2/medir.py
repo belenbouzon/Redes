@@ -5,6 +5,7 @@ import math
 from geoip import geolite2
 import sys
 import time
+import pickle
 
 from scapy.all import *
 
@@ -67,7 +68,7 @@ class Route:
 	def __init__(self):
 		self.hops = []
 
-	def trace(self, hostname):
+	def trace(self, hostname, name):
 		
 		self.hops = []
 
@@ -127,81 +128,17 @@ class Route:
 				break
 
 		if hasReply:
+			with open("new_mediciones/" + str(name) + ".txt", 'wb') as f:
+				pickle.dump(self.hops, f)
+
 			print "Listo."
 		else:
 			print "Error."
 
-	def get_data(self):
-
-		self.hops[0].rtti = self.hops[0].rtt
-		last_rtt_not_zero = None
-
-		for i in range(1, len(self.hops)):
-			if self.hops[i].packet_ip != "":
-				if self.hops[i].rtt < self.hops[i-1].rtt:
-					self.hops[i].rtti = 0.0
-				else:
-		
-					if last_rtt_not_zero:
-						self.hops[i].rtti = self.hops[i].rtt - last_rtt_not_zero
-					else:
-						self.hops[i].rtti = self.hops[i].rtt
-					
-				last_rtt_not_zero = self.hops[i].rtt
-			else:
-				self.hops[i].rtti = 0.0
-
-		average = 0.0
-
-		for hop in self.hops:
-			average += hop.rtti
-
-		average = average / float(len(self.hops))
-
-		variance = 0.0
-
-		for hop in self.hops:
-			variance += pow(hop.rtti - average, 2)
-
-		variance = variance / float(len(self.hops)-1)
-		standard_deviation = math.sqrt(variance)
-
-		print "Average: " + str(average).replace('.', ',')
-		print "Variance: " + str(variance).replace('.', ',')
-		print "Standard Deviation: " + str(standard_deviation).replace('.', ',')
-
-		print "Average+SD: " + str(average + standard_deviation).replace('.', ',')
-		print "Average-SD: " + str(average - standard_deviation).replace('.', ',')
-
-		line = "IP\t"
-		line += "\t" + "Pais"
-		line += "\t" + "RTTI Intervalo"
-		line += "\t" + "Cimbala"
-		print line
-		print "-" * 80
-
-		for hop in self.hops:
-			line = ""
-
-			if hop.packet_ip != "":
-				hop.cimbala = 0 # Deberiamos hacer la cuenta
-
-				line += hop.packet_ip
-
-			else:
-				line += "***.***.***.***"
-
-			line += "\t" + str(hop.geoip).replace('.', ',')
-			line += "\t" + str(hop.rtti).replace('.', ',')
-			line += "\t" + str(hop.cimbala).replace('.', ',')
-			
-			print line
-
 def main(argv=sys.argv):
 	route = Route()
 
-	route.trace(universidades[argv[1]])
-	route.get_data()
+	route.trace(universidades[argv[1]], argv[1])
 
 if __name__ == '__main__':
 	main()
