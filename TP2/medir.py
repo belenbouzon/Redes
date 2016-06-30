@@ -6,6 +6,7 @@ from geoip import geolite2
 import sys
 import time
 import pickle
+from pprint import pprint
 
 from scapy.all import *
 
@@ -45,16 +46,14 @@ max_ttl = 30
 echo_reply = 0
 echo_request = 11
 
-repeat_limit = 3
 cant_not_replys_limit = 3
 
 class Salto:
 	ttl = 0
 	packet = None
 	rtt = 0.0
-	rtti = 0.0
 	geoip = None
-	cimbala = 0.0
+	confianza = 0.0
 
 	def __init__(self, **kwds):
 		self.__dict__.update(kwds)
@@ -63,8 +62,9 @@ class Route:
 	def __init__(self):
 		self.hops = []
 
-	def trace(self, hostname, name):
+	def trace(self, hostname, name, repeat_limit):
 		
+		repeat_limit = int(repeat_limit)
 		self.hops = []
 
 		hasReply = True
@@ -75,60 +75,74 @@ class Route:
 
 			rtt_total = 0
 			rtt_count = 0	
+
+			ips_hops = []
+			ips_count = dict()
+
 			for i in range(repeat_limit):
 			
 				packet = IP(dst=hostname, ttl=ttl) / ICMP()
-				rtt = time.clock()
-				answer = sr1(packet, timeout=1, verbose=0)
-				rtt = time.clock() - rtt
+				a,u = sr(packet, timeout=1, verbose=0)	
 
-				print str(rtt)
-				
-				answer_ip = ""
+				if len(u) > 0:
+					continue
+					
+				answer = a[0][1]
+				rtt = a[0][1].time - a[0][0].sent_time
 
 				if answer:
-					rtt_total += rtt
-					rtt_count += 1
-					answer_ip = answer.src
-					cant_not_replys = 0
-				else:
-					cant_not_replys += 1
+					ip = answer.src
+					if ip in ips_count:
+						ips_count[ip] = ips_count[ip]+1
+					else:
+						ips_count[ip] = 1
+					new_answer = {"ip": ip, "rtt": rtt}
+
+					ips_hops.append(new_answer)
+
+			if(len(ips_hops) == 0):
+				continue
+
+			ips_sorted = sorted(ips_count, key=ips_count.get,  reverse=True)
+
+			ip_ganadora = ips_sorted[0]
+
+			ips_count = ips_count[ip_ganadora]
+
+			rtt = 0
+			for hop in ips_hops:
+				if hop['ip'] == ip_ganadora:
+					rtt = rtt+ hop['rtt']
+
+			rtt = rtt/ips_count
+			confianza = ips_count/repeat_limit
 
 
-			if rtt_count > 0:
-				print str(rtt_total)
-				print str(rtt_count)
-				print "---------"
-				rtt_prom = rtt_total / rtt_count
-			else: 
-				rtt_prom = 0
 
-			record = None
-
-			if answer:
-				match = geolite2.lookup(answer_ip)
-				if match is not None:
-					record = match.country
-				else:
-					record = None
-			
-			self.hops.append(Salto(ttl=ttl, packet_ip=answer_ip, rtt=rtt_prom, geoip=record, cimbala=0.0))
-
-			if answer:
-				hop = str(answer.src)
-				hop += "\t" + str(rtt_prom)
-				if record:
-					hop += "\tPosible locacion: " + str(record)
-				print hop
+			match = geolite2.lookup(ip_ganadora)
+		 	if match is not None:
+		 		record = match.country
 			else:
-				print "* * *"
+		 		record = None
 
-			if (answer and answer.type == echo_reply) or cant_not_replys >= cant_not_replys_limit * repeat_limit:
+		 	self.hops.append(
+		 		Salto(ttl=ttl,
+		 			packet_ip=ip_ganadora,
+		 			rtt=rtt,
+		 			geoip=record,
+		 			ips_count=ips_count,
+		 			confianza=confianza
+		 		)
+		 	)
+
+		 	print str(ip_ganadora) + "\t" + str(rtt) + "\t" + str(confianza) + "\t" + str(record)
+
+			if (answer and answer.type == echo_reply):
 				hasReply = True
-				break
+			 	break
 
 		if hasReply:
-			with open("new_mediciones/" + str(name) + ".txt", 'wb') as f:
+			with open("new_mediciones/" + str(name) + "-" + str(repeat_limit) + ".txt", 'wb') as f:
 				pickle.dump(self.hops, f)
 
 			print "Listo."
@@ -138,7 +152,7 @@ class Route:
 def main(argv=sys.argv):
 	route = Route()
 
-	route.trace(universidades[argv[1]], argv[1])
+	route.trace(universidades[argv[1]], argv[1], argv[2])
 
 if __name__ == '__main__':
 	main()
