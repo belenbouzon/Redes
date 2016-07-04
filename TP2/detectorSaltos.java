@@ -150,15 +150,6 @@ public class detectorSaltos {
 					}else{
 						salto.put(anterior + "_" + actual, 's');
 					}
-					
-					//--------------------------------------------------------
-					
-					if(anterior.equals("64.124.200.234")){
-						System.err.print(anterior_continente + "\n" + actual_continente+"\n");
-					}
-					
-					//--------------------------------------------------------
-					
 				}
 				
 				anterior = actual;
@@ -170,27 +161,30 @@ public class detectorSaltos {
 		double varianza = calcularVarianza(diferencias,esperanza);
 		Iterator<Double> itDif = diferencias.iterator();
 		Iterator<String> itIpDif = ipDiferencias.iterator();
+		
+		int tamanio = diferencias.size();
+		double r = valoresR[tamanio];
+		
 		while(itDif.hasNext()){
 			double valor = itDif.next();
 			String ip = itIpDif.next();
-			int tamanio = diferencias.size();
 			if(salto.get(ip).equals('u')){
-				if(esOutlet(valor,esperanza,varianza,tamanio)){
+				if(esOutlet(valor,esperanza,r,tamanio)){
 					System.out.print(ip +  " salto_detectado desconocido\n");
 				}else{
 					System.out.print(ip +  " no_salto desconocido\n");
 				}
 			}else if(salto.get(ip).equals('s')){
-				if(esOutlet(valor,esperanza,varianza,tamanio)){
-					System.out.print(ip +  " salto_detectado correcto\n");
+				if(esOutlet(valor,esperanza,r,tamanio)){
+					System.out.print(ip +  " salto_detectado CORRECTO\n");
 				}else{
 					System.out.print(ip +  " no_salto FALLA\n");
 				}
 			}else{
-				if(esOutlet(valor,esperanza,varianza,tamanio)){
+				if(esOutlet(valor,esperanza,r,tamanio)){
 					System.out.print(ip +  " salto_detectado FALLA\n");
 				}else{
-					System.out.print(ip +  " no_salto correcto\n");
+					System.out.print(ip +  " no_salto CORRECTO\n");
 				}
 			}
 			
